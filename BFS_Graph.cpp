@@ -20,6 +20,7 @@ void BFS(int src, vector<int>Graph[], vector<int>&vis){
 int main(){
 	int N, E;
 	cin >> N >> E;
+	//Adjacency list - array of vectors
 	vector<int>Graph[N+1];	//array of vectors
   int u, v;
 	for(int i = 0; i < E; i++){
