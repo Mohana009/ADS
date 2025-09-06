@@ -18,11 +18,10 @@ struct TreeNode{
 struct AVLTree{
 	
 	TreeNode *root = NULL;
-	
+
 //	AVLTree(){
 //		root = NULL;
 //	}
-	
 	
 	int Height(TreeNode *node){
 		if(node == NULL)	return 0;
@@ -62,9 +61,8 @@ struct AVLTree{
 		//Changing heights after rotation
 		X->height = max(Height(X->left), Height(X->right)) + 1;
 		P->height = max(Height(P->left), Height(P->right)) + 1;
-		
+	
 		return X;
-		
 	}
 	
 	//insert
@@ -78,7 +76,6 @@ struct AVLTree{
 		else{
 			root->left = Add(root->left, val);
 		}
-		
 		
 		//need to check balance factor
 		//To know balance factor we need right height and left height
@@ -105,8 +102,6 @@ struct AVLTree{
 		}
 		
 		return root;
-		
-		
 	}		
 	
 	void Insert(int val){
@@ -186,14 +181,11 @@ struct AVLTree{
 		}
 		
 		return root;
-		
 	}
 	
 	void Delete(int val){
 		root = Remove(root, val);
 	}
-	
-	//search
 	
 	void Inorder(TreeNode *root){
 		if(root == NULL)	return;
@@ -201,7 +193,6 @@ struct AVLTree{
 		cout << root->data << " ";
 		Inorder(root->right);
 	}
-	
 	
 	void printInorder(){
 		Inorder(root);
