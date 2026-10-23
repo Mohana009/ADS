@@ -1,0 +1,26 @@
+// https://cses.fi/problemset/task/1635
+//*Distinct ways*
+//Not DP
+//recursion
+#include<bits/stdc++.h>
+using namespace std;
+int Coin_combinations(int x, int n, vector<int>&coins){
+	if(x == 0)	return 1;
+	if(x < 0)	return 0;
+	int ans = 0;
+	for(int i = 0; i < n; i++){
+		ans += Coin_combinations(x - coins[i], n, coins); 
+	}
+	return ans;
+}
+int main(){
+	int n, x;
+	cin >> n >> x;
+	vector<int>coins(n);
+	for(int i = 0; i < n; i++){
+		cin >> coins[i];
+	}
+	cout << Coin_combinations(x, n, coins);
+}
+//100 1000000
+27 69 68 13 1 63 28 44 45 67 57 11 8 85 42 20 32 77 39 52 70 24 4 79 7 15 54 88 51 73 89 66 48 56 47 18 2 30 21 49 74 9 99 83 55 95 62 90 22 31 71 98 43 75 25 16 12 64 61 38 40 26 3 96 41 86 5 14 91 33 78 50 23 84 94 36 46 97 53 81 65 34 93 59 6 35 72 10 82 60 19 92 29 87 76 100 80 17 58 37
